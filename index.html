@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Fatos de Gatos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe4e1;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #cc3366;
+    }
+    #fact {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #cc3366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #b32d5f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐾 Fatos sobre Gatos 🐾</h1>
+  <div id="fact">Clique no botão para ver um fato!</div>
+  <button onclick="getCatFact()">Mostrar fato</button>
+
+  <script>
+    function getCatFact() {
+      fetch('https://meowfacts.herokuapp.com/')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('fact').innerText = data.data[0];
+        })
+        .catch(error => {
+          document.getElementById('fact').innerText = "Algo deu errado :(";
+        });
+    }
+  </script>
+
+</body>
+</html>
