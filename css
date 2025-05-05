@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Curiosidades sobre Gatos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #cc6600;
+    }
+
+    .curiosidade {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      font-size: 18px;
+    }
+
+    button {
+      background-color: #cc6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #fff;
+    }
+    .decoracao {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: -1;
+      width: 400px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐱 Curiosidades sobre Gatos 🐱</h1>
+
+  <div class="curiosidade" id="curiosidade">Clique no botão para ver uma curiosidade!</div>
+
+  <button onclick="mostrarCuriosidade()">Mostrar Curiosidade</button>
+
+  <p style="margin-top: 30px; font-size: 14px;">
+    Fonte: <a href="https://optimumpet.com.br/dicas-e-conselhos/sobre-gatos-8-curiosidades-sobre-os-felinos/" target="_blank">Optimum Pet</a>
+  </p>
+
+  <script>
+    const curiosidades = [
+      "Os gatos podem dormir até 16 horas por dia! Eles descansam bastante para manter sua energia.",
+      "Eles se comunicam com os olhos. Um piscar lento pode ser sinal de carinho.",
+      "Na maioria das vezes, gatos caem de pé! Eles têm um reflexo incrível.",
+      "Eles marcam território com o rosto. Ao se esfregarem, liberam feromônios.",
+      "A audição dos gatos é super afiada. Melhor que a dos cães, inclusive!",
+      "Eles podem enxergar no escuro. Os olhos deles são adaptados para pouca luz.",
+      "Gatos têm 30 vértebras na coluna, o que os torna muito flexíveis.",
+      "Cada gato tem um miado diferente. É como se fosse sua própria 'voz'!"
+    ];
+
+    function mostrarCuriosidade() {
+      const aleatoria = Math.floor(Math.random() * curiosidades.length);
+      document.getElementById('curiosidade').textContent = curiosidades[aleatoria];
+    }
+  </script>
+
+  <img src="https://i.pinimg.com/736x/2f/5e/2b/2f5e2b8e5359a447f945aec8daed9fa0.jpg" alt="Gato decorativo" class="decoracao">
+
+</body>
+</html>
